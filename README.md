@@ -18,4 +18,4 @@ The illusion works using strobe light to and a fast repetitive motion. Each flas
 
 Link to webshop to get a complete kit: http://www.cubic-print.com/TimeFrame
 
-Link to instrutabes if you prefer 100% DIY:
+Link to instrutables.com if you prefer 100% DIY:
