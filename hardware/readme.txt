@@ -1,1 +1,1 @@
-A detailed manuel is included in our DIY kit. If you like to build your own TimeFrame without purchasing our kit, please follow the description on instructables.com: http://www.instructables.com/id/TimeFrame-a-Time-Portal-to-Put-on-Your-Desk
+A detailed manual is included in our DIY kit. If you like to build your own TimeFrame without purchasing our kit, please follow the description on instructables.com: http://www.instructables.com/id/TimeFrame-a-Time-Portal-to-Put-on-Your-Desk
