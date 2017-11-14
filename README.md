@@ -2,7 +2,7 @@
 Get your own time portal on your desk!
 
 <p align="left">
-  <img src="http://www.cubic-print.com/WebRoot/Store14/Shops/63251711/57F4/E644/1908/2957/EFE4/C0A8/2AB8/8BC6/Time_Frame_m.JPG" width="550"/>
+  <img src="http://www.cubic-print.com/WebRoot/Store14/Shops/63251711/57F4/E644/1908/2957/EFE4/C0A8/2AB8/8BC6/Time_Frame_v2_bILD_5_ml.JPG" width="550"/>
 </p>
 
 Mind-blowing gadgets are rare these days. Very seldom will you stumble across something truly magical that leaves you in a state of confusion and amazement.
