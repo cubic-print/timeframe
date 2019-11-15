@@ -17,4 +17,4 @@ The illusion works using a combination of a strobe light to and a fast repeating
 
 Link to webshop to get a complete kit: http://www.cubic-print.com/TimeFrame
 
-Link to instrutables.com if you prefer 100% DIY: http://www.instructables.com/id/TimeFrame-a-Time-Portal-to-Put-on-Your-Desk
+Link to instructables.com if you prefer 100% DIY: http://www.instructables.com/id/TimeFrame-a-Time-Portal-to-Put-on-Your-Desk
