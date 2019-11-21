@@ -703,7 +703,7 @@ void debug_monitor() {
   // frequency, duty and delta values.
   if (DEBUG_MODE) {
     if (millis() % (DEBUG_MS + 1) != 0)
-      // Rate limit debug to once per DEBUG_MS milliseconds. e.g. 
+      // Rate limit debug to once per DEBUG_MS milliseconds.
       return;
     float actual_led_freq_hz = calculate_actual_hz(1,TIMER1_PRESCALER);
     float actual_mag_freq_hz = calculate_actual_hz(2,TIMER2_PRESCALER);
@@ -758,7 +758,7 @@ void print_target_values() {
   Serial.print(led_freq_delta_hz, DEBUG_DECIMAL_PLACES);
   Serial.println(" Hz");
 }
-  
+
 void print_mode() {
   // Prints mode name (no trailing whitespace or carriage return)
   if (mode == POWER_ON)
