@@ -17,10 +17,12 @@
 //    - Implementation of Paul Hutchison's improvements:
 //        - Glowing LED for pushbutton (OPTIONAL)
 //        - Frame starts in standby mode
-//        - Removed LED only mode
 //        - Additional analog input to control electromagnet duty
 //          (OPTIONAL)
 //        - Adjustments to ranges
+//        - NOTE: Paul removed "Magnet Off" (LED only) mode. This code
+//                brings it back (but it may be turned off with a
+//                constant)
 //    - NEW FEATURE: frequency control
 //
 // Note that this sketch is compatible with with both the original
@@ -66,6 +68,8 @@
 // Hardware feature constants
 const bool HW_HAS_PUSHBUTTON_LED = true;
 const bool HW_HAS_MAG_STRENGTH_KNOB = true;
+// Software feature constants
+const bool INCLUDE_MAGNET_OFF_MODE = true;
 // Debug constants
 const bool DEBUG_MODE = false;
 const bool DEBUG_PRINT_OCRS = false; // Only if DEBUG_MODE
@@ -78,10 +82,11 @@ const float ANALOG_READ_MAX = 1023.0;
 const float SYS_CLK_HZ = 16000000.0; // 16 Mhz
 // Mode constants
 const uint16_t POWER_ON = 0;
-const uint16_t SLOW_MOTION = 1;
-const uint16_t DISTORTED_REALITY = 2;
-const uint16_t STANDBY = 3;
-const uint16_t FREQ_CONTROL = 4;
+const uint16_t STANDBY = 1;
+const uint16_t SLOW_MOTION = 2;
+const uint16_t DISTORTED_REALITY = 3;
+const uint16_t MAGNET_OFF = 4;
+const uint16_t FREQ_CONTROL = 5;
 // Pin constants
 const uint8_t LED_DUTY_PIN = A0;   // Brightness
 const uint8_t FREQ_DELTA_PIN = A1; // Slow motion speed
@@ -186,6 +191,11 @@ void loop() {
       if (prev_mode == FREQ_CONTROL)
         write_freq_to_eeprom();
     }
+    break;
+
+  case MAGNET_OFF:
+    if (mode_changed())
+      mag_off();
     break;
 
   case FREQ_CONTROL:
@@ -407,6 +417,11 @@ uint16_t next_mode(uint16_t current_mode) {
       next_mode = FREQ_CONTROL;
     break;
   case DISTORTED_REALITY:
+    next_mode = STANDBY;
+    if (INCLUDE_MAGNET_OFF_MODE)
+      next_mode = MAGNET_OFF;
+    break;
+  case MAGNET_OFF:
     next_mode = STANDBY;
     break;
   case FREQ_CONTROL:
@@ -748,12 +763,14 @@ void print_mode() {
   // Prints mode name (no trailing whitespace or carriage return)
   if (mode == POWER_ON)
     Serial.print("         POWER_ON");
+  else if (mode == STANDBY)
+    Serial.print("          STANDBY");
   else if (mode == SLOW_MOTION)
     Serial.print("      SLOW_MOTION");
   else if (mode == DISTORTED_REALITY)
     Serial.print("DISTORTED_REALITY");
-  else if (mode == STANDBY)
-    Serial.print("          STANDBY");
+  else if (mode == MAGNET_OFF)
+    Serial.print("       MAGNET_OFF");
   else if (mode == FREQ_CONTROL)
     Serial.print("     FREQ_CONTROL");
   else
