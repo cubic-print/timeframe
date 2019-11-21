@@ -104,7 +104,7 @@ const uint16_t MAG_PIN = OC2B_PIN;            // Timer 2 (8-bit)
 const uint16_t PUSHBUTTON_INPUT_PIN = 6;
 const uint16_t ONBOARD_LED_PIN = 13;
 // Pushbutton LED constants
-const float PUSHBUTTON_LED_STANDBY_PERIOD_MS = 2000.0;
+const float PUSHBUTTON_LED_STANDBY_PERIOD_MS = 3000.0;
 const float PUSHBUTTON_LED_FREQ_CONTROL_PERIOD_MS = 200.0;
 const float PUSHBUTTON_LED_MAX_DUTY = 100.0; // 255 = 100%
 const float PUSHBUTTON_LED_OFF_PCT = 10.0;   // < 100
@@ -121,8 +121,8 @@ const float EEPROM_VALID_ADDRESS = 0;
 const float EEPROM_VALID_VALUE = 112233.01;  // Magic number @ addr 0
 const float EEPROM_FREQ_ADDRESS = 4;
 // Frequency and duty tuning constants
-const float BASE_FREQ_HZ = 76.0;
-const float FREQ_RANGE_HZ = 12.0; // Total range, centered around BASE_FREQ_HZ
+const float BASE_FREQ_HZ = 77.0;
+const float FREQ_RANGE_HZ = 14.0; // Total range, centered around BASE_FREQ_HZ
 const float MIN_FREQ_DELTA_HZ = 0.5; // Negative OK!
 const float MAX_FREQ_DELTA_HZ = 2.0; // Negative OK, but must be > MIN
 const float MIN_LED_DUTY_PCT = 0.0;
